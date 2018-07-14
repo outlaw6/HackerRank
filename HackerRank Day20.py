@@ -13,7 +13,7 @@ for num in range(len(a)):
     for nmbr in range(n-1):
         if a[nmbr] > a[nmbr+1]:
             temp = a[nmbr]
-            a[nmbr] = a[nmbr+1]
+				            a[nmbr] = a[nmbr+1]
             a[nmbr+1] = temp
             num_of_swaps += 1
     if num_of_swaps == 0:
