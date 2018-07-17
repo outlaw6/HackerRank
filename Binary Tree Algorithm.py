@@ -54,6 +54,21 @@ class BinarySearchTree:
 
 		return max(leftHeight, rightHeight)
 
+	def search(self, value):
+
+		if self.root != None:
+			return self._search(value, self.root)
+		else:
+			return False
+
+	def _search(self, value, cur_node):
+		if value == cur_node.value:
+			return True
+		elif value < cur_node.value and cur_node.leftChild != None:
+			return self._search(value, cur_node.leftChild)
+		elif value > cur_node.value and cur_node.rightChild != None:
+			return self._search(value, cur_node.rightChild)
+		return False
 
 def fillTree(tree, num_elements=100, max_int=1000):
 	from random import randint
@@ -63,8 +78,11 @@ def fillTree(tree, num_elements=100, max_int=1000):
 	return tree
 tree = BinarySearchTree()
 b=[20,50,35,44,9,15,62,11,13]
-a=[3,5,2,1,4,6,7]
+a=[3,5,2,1,4,6,7, 10]
 for x in a:
 	tree.insert(x)
 
 print(tree.height())
+
+print(tree.search(10))
+print(tree.search(40))
