@@ -43,7 +43,7 @@ class Solution:
         return head        
 
 
-mylist= Solution()
+'''mylist= Solution()
 head=None
 data = 0
 for i in range(8):
@@ -55,4 +55,12 @@ mylist.display(head)
 head=mylist.removeDuplicates(head)
 print(head)
 
-mylist.display(head)
+mylist.display(head)'''
+a=100
+b=15
+
+print(a&b)
+print(str(bin(a&b)))
+#print(str(bin(a&b)))
+print(str(bin(a))[2:])
+print(str(bin(b))[2:])
