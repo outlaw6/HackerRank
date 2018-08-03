@@ -9,7 +9,7 @@ class HashTable:
     	
     	hashvalue = self.hash(key, self.size)
 
-    	if self.slot == None:
+    	if self.slot[hashvalue] == None:
     		self.slots[hashvalue] = key
     		self.data[hashvalue]  = data
 
@@ -20,7 +20,7 @@ class HashTable:
     		else:
     			nextslot = self.rehash(hashvalue, self.size)
 
-    			while self.nextslot != None and self.slots[hashvalue] != key:
+    			while self.slots[nextslot] != None and self.slots[hashvalue] != key:
     				nextslot = self.rehash(nextslot, self.size)
 
     			if self.slots[nextslot] == None:
@@ -28,16 +28,6 @@ class HashTable:
     				self.data[hashvalue] = data
     			else:
     				self.data[nextslot] = data
-
-    				
-
-
-
-
-
-
-
-
 
     def hash(self, key, size):
     	return key % size
